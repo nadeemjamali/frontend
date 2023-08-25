@@ -1,0 +1,210 @@
+@import "../../../mixins.scss";
+.productPage {
+  width: 100%;
+  padding-top: 100px;
+  margin-bottom: 50px;
+  @include md {
+    margin-bottom: 0;
+    padding-top: 70px;
+    min-height: 700px;
+  }
+
+  .Mainproduct {
+    .productHeader {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      flex-direction: column;
+      justify-content: space-between;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+
+      p {
+        text-transform: capitalize;
+        font-weight: 900;
+        font-size: 2rem;
+      }
+
+      @include smm {
+        flex-direction: row;
+      }
+
+      .selectors {
+        display: flex;
+        flex-direction: row;
+        label {
+          display: none;
+        }
+        #sortBy,
+        #category {
+          width: auto;
+          margin-top: 1rem;
+          margin-right: 1rem;
+          border: none;
+          padding: 0.5rem;
+          background-color: purple;
+          color: blanchedalmond;
+          border-radius: 2rem;
+
+          @include smm {
+            margin-top: 0;
+            width: auto;
+            margin-right: 2rem;
+          }
+          option {
+            font-size: 1.2rem;
+          }
+        }
+        .addProduct {
+          display: flex;
+          flex-direction: row;
+          align-items: center;
+          .addicon {
+            font-size: 2rem;
+          }
+          p {
+            font-size: 1.2rem;
+          }
+        }
+      }
+    }
+
+    .Products {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-around;
+      .Product {
+        margin: 1rem;
+        width: 300px;
+        display: flex;
+        flex-direction: column;
+        border-radius: 2rem;
+        box-shadow: inset 0 -3em 3em rgba(0, 0, 0, 0.1),
+          0 0 0 2px rgb(255, 255, 255), 0.3em 0.3em 1em rgba(0, 0, 0, 0.3);
+        @include mds {
+          flex-direction: row;
+          width: 400;
+        }
+
+        .ImageContainer {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          position: relative;
+          width: 100%;
+          height: 300px;
+          aspect-ratio: 1 / 1;
+          transition: all ease 0.5s;
+          @include mds {
+            width: 200px;
+          }
+.updateProfilePencil{
+   font-size: 2rem;
+        z-index: 1;
+        position: absolute;
+        top: 0;
+        left: 0;
+}
+          .lazy-load-image-background {
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+            overflow: hidden;
+            img {
+              width: 100%;
+              height: 100%;
+              object-fit: cover;
+              object-position: center;
+            }
+          }
+          .updateProfile{
+        font-size: 4rem;
+      
+      }
+        }
+        .details {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          .title {
+            margin: 0.5rem;
+            @include mds {
+              margin: 1rem;
+            }
+          }
+
+          .rating {
+            margin: 0.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(68, 190, 68);
+            color: #fff;
+            width: 30%;
+            height: 20px;
+            @include mds {
+              margin: 1rem;
+            }
+          }
+
+          .price {
+            margin: 0.5rem;
+            @include mds {
+              margin: 1rem;
+            }
+          }
+
+          .discount {
+            margin: 0.5rem;
+            padding: 0.5rem;
+            @include mds {
+              margin: 1rem;
+            }
+          }
+        }
+      }
+    }
+
+    .pagination {
+      width: 100%;
+      display: flex;
+      flex-direction: row;
+      align-self: center;
+      justify-content: center;
+      margin: 2rem 0;
+      .btn {
+        padding: 0.2rem;
+        background-color: var(--black-light);
+        margin: 0 0.2rem;
+        color: #fff;
+
+        @include smm {
+          padding: 0.5rem;
+          margin: 0 0.5rem;
+        }
+
+        @include smm {
+          padding: 1rem;
+          margin: 0 1rem;
+        }
+      }
+      .normal {
+        font-size: 0.7rem;
+        @include ssm {
+          font-size: 1rem;
+        }
+      }
+      .active {
+        color: purple;
+        font-size: 1rem;
+        @include ssm {
+          font-size: 1rem;
+        }
+        @include smm {
+          font-size: 2rem;
+        }
+      }
+    }
+  }
+}

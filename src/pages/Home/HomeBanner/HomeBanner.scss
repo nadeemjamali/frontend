@@ -1,0 +1,161 @@
+@import "../../../../mixins.scss";
+
+.homeBanner {
+  width: 100%;
+  height: 450px;
+  display: flex;
+  background-color: white;
+  align-items: center;
+  position: relative;
+
+  @include md {
+    height: 700px;
+  }
+
+  .Background-img{
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0.5;
+    overflow: hidden;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+        }
+    
+    @include sm{
+        display: none;
+    }
+  }
+  .opacity-layer {
+    width: 100%;
+    height: 250px;
+    background: linear-gradient(180deg,
+            rgba(4, 21, 45, 0) 0%,
+            #04152d 79.17%);
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+  .contentWrapper {
+ 
+    @include sm{
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .homeDetailContainer{
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: white;
+        text-align: center;
+        position: relative;
+        max-width: 800px;
+        margin: 0 auto;
+       @include sm{
+color: black;
+       }
+        .title {
+          color: #000;
+            font-size: 30px;
+            font-weight: 500;
+            margin-bottom: 10px;
+      
+            @include md {
+              margin-bottom: 0;
+              font-size: 60px;
+            }
+          }
+      
+          .subTitle {
+            color: #000;
+            font-size: 25px;
+            font-weight: 500;
+            margin-bottom: 40px;
+
+            @include sm {
+                font-size: 20px;
+            }
+      
+            @include md {
+              font-size: 24px;
+            }
+          }
+      
+          .searchInput {
+            display: flex;
+            align-items: center;
+            width: 80%;
+
+
+   @include lg {
+               width: 100%;
+              }
+              label{
+                display: none;
+              }
+
+      
+            input {
+              border-color: black;
+              width: calc(100% - 100px);
+              height: 50px;
+              background-color: #eedede;
+              outline: 0;
+              border: 0;
+              border-radius: 30px 0 0 30px;
+              padding: 0 15px;
+              font-size: 14px;
+      
+              @include md {
+                width: calc(100% - 150px);
+                height: 60px;
+                font-family: 20px;
+                padding: 0 30px;
+              }
+            }
+      
+            button {
+              width: 100px;
+              height: 50px;
+              background: var(--gradient);
+              color: #fff;
+              outline: 0;
+              border-radius: 0 30px 30px 0;
+              font-size: 10px;
+              cursor: pointer;
+
+
+      
+              @include md {
+                width: 150px;
+                height: 60px;
+                font-size: 30px;
+              }
+            }
+          }
+    }
+
+
+
+    .homeImageContainer{
+display: none; 
+    @include sm{
+        display: block;
+        width: 60%;
+        .Homeimage{
+            width: 100%;
+            border-radius: 2rem;
+        }
+    }
+}
+  }
+}

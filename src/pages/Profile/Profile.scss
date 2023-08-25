@@ -1,0 +1,365 @@
+@import "../../../mixins.scss";
+.profilePage {
+  width: 100%;
+  min-height: 700px;
+  padding-top: 6rem;
+  margin-bottom: 2rem;
+
+  .beforeLogin {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    height: 500px;
+
+    p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    button {
+      background-color: var(--pink);
+      color: #fff;
+      width: 200px;
+      height: 50px;
+      font-size: 2rem;
+      border: none;
+      border-radius: 2rem;
+
+      @include smm {
+        width: 200px;
+      }
+    }
+  }
+
+  .afterLogin {
+    .profiledetails {
+      display: flex;
+      position: relative;
+      flex-direction: column;
+      gap: 25px;
+      margin-bottom: 2rem;
+
+      @include md {
+        gap: 50px;
+        flex-direction: row;
+      }
+
+      .ImageContainer {
+        width: 100%;
+        display: block;
+        border-radius: 12px;
+        @include md {
+          max-width: 300px;
+          max-height: 400px;
+        }
+        .uploadicon {
+          position: absolute;
+          top: 0;
+          left: 0;
+          font-size: 1.5rem;
+          color: #000;
+          background-color: #fff;
+          z-index: 11;
+        }
+        .profilePic {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+      .basicdetails {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+
+        @include sdm {
+          width: 80%;
+        }
+        .details {
+          display: flex;
+          width: 50%;
+          flex-direction: column;
+          // margin-top: 2rem;
+          gap: 1rem;
+
+          .name {
+            font-size: 28px;
+            line-height: 40px;
+            text-transform: capitalize;
+
+            @include md {
+              font-size: 34px;
+              line-height: 44px;
+            }
+          }
+
+          .email {
+            font-size: 16px;
+            line-height: 24px;
+            color: rgb(161, 78, 78);
+            font-style: italic;
+            opacity: 0.6;
+
+            @include md {
+              font-size: 30px;
+              line-height: 28px;
+            }
+          }
+          .deleteBtnContainer {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            margin-top: 2rem;
+
+            button {
+              background-color: var(--pink);
+              color: #fff;
+              width: 100px;
+              height: 40px;
+              border: none;
+              border-radius: 2rem;
+
+              @include smm {
+                width: 100px;
+              }
+            }
+          }
+        }
+        .editForm {
+          display: flex;
+          flex-direction: column;
+          gap: 1rem;
+          margin-top: 2rem;
+          position: relative;
+          input {
+            border-radius: 2rem;
+            background-color: var(--black-lighter);
+            color: #fff;
+            border: none;
+            padding: 0.5rem;
+          }
+          ::placeholder {
+            color: #fff;
+          }
+          textarea {
+            resize: none;
+            border-radius: 0.5rem;
+            color: #fff;
+            background-color: var(--black-lighter);
+            height: 100px;
+          }
+          ::placeholder {
+            color: #fff;
+          }
+          button {
+            background-color: var(--pink);
+            color: #fff;
+            width: 70px;
+            height: 40px;
+            border: none;
+            border-radius: 2rem;
+
+            @include smm {
+              width: 90px;
+            }
+          }
+        }
+
+        .edit_goBack {
+          background-color: var(--pink);
+          color: #fff;
+          width: 50px;
+          height: 20px;
+          font-size: 0.6rem;
+          text-align: center;
+          border: none;
+          border-radius: 1rem;
+          text-transform: capitalize;
+          margin-left: 3rem;
+
+          @include smm {
+            width: 70px;
+            margin-left: 5rem;
+            height: 30px;
+            font-size: 1rem;
+          }
+        }
+      }
+    }
+
+    .sellerProductSection {
+      margin-top: 2rem;
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      @include smm {
+        width: 50%;
+      }
+
+      .sellerProducts {
+        padding: 16px;
+        width: 100%;
+        font-size: 14px;
+        overflow: hidden;
+        transition: box-shadow 0.1s linear;
+        background-color: #fff;
+        border: 1px solid #dbdbdb;
+        position: relative;
+        cursor: pointer;
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.15);
+        margin-bottom: 8px;
+        border-radius: 4px;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        .productImg {
+          opacity: 1;
+          max-width: 40px;
+          max-height: 40px;
+          @include ssm {
+            max-width: 80px;
+            max-height: 80px;
+          }
+          @include smm {
+            max-width: 100px;
+            max-height: 100px;
+          }
+        }
+        .productdetails {
+          font-size: 1rem;
+        }
+        .icons {
+          font-size: 1.2rem;
+          width: 10%;
+          display: flex;
+          flex-direction: row;
+          justify-content: space-between;
+
+          .edit,
+          .delete {
+            border: none;
+          }
+        }
+      }
+      .addProduct{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        font-size: 1.5rem;
+      }
+    }
+
+    .orderSection {
+      .noOrders {
+        margin-top: 2rem;
+        width: 80%;
+        height: 30%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        p {
+          font-size: 2rem;
+          padding: 1rem;
+          border: 1px solid black;
+        }
+
+        button {
+          background-color: var(--pink);
+          color: #fff;
+          width: 90px;
+          height: 40px;
+          border: none;
+          border-radius: 2rem;
+          margin-top: 4rem;
+
+          @include smm {
+            width: 110px;
+          }
+        }
+      }
+
+      .allorders {
+        margin-top: 2rem;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        @include smm {
+          width: 80%;
+        }
+
+        .orderHeading {
+          font-size: 2rem;
+        }
+        .orderdetails {
+          padding: 16px;
+          width: 100%;
+          font-size: 14px;
+          overflow: hidden;
+          transition: box-shadow 0.1s linear;
+          background-color: #fff;
+          border: 1px solid #dbdbdb;
+          position: relative;
+          cursor: pointer;
+          // display: block;
+          box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.15);
+          margin-bottom: 8px;
+          border-radius: 4px;
+          display: flex;
+          flex-direction: row;
+          .itemDetails {
+            .image {
+              margin: auto;
+              opacity: 1;
+              max-width: 40px;
+              max-height: 40px;
+              @include ssm {
+                max-width: 80px;
+                max-height: 80px;
+              }
+              @include smm {
+                max-width: 100px;
+                max-height: 100px;
+              }
+            }
+            .quantity {
+              display: none;
+              @include ssm {
+                display: block;
+              }
+            }
+          }
+          .productdetail {
+            display: flex;
+            justify-content: space-evenly;
+            flex-direction: row;
+            align-items: center;
+            width: 100%;
+
+            .selectedAdress {
+              display: none;
+              @include ssm {
+                display: block;
+              }
+            }
+          }
+          button {
+            background-color: var(--pink);
+            color: #fff;
+            height: 40px;
+            width: 100px;
+            border: none;
+            border-radius: 2rem;
+
+            @include smm {
+              width: 200px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
